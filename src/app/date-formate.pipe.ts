@@ -29,7 +29,7 @@ export class DateFormatePipe implements PipeTransform {
       : userPrefs.dateFormat;
 
     let resultDate = datePipe.transform(
-      date,
+      date + 'Z',
       dateFormat,
       timeZoneOffset,
       userPrefs.language
