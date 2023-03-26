@@ -7,11 +7,10 @@ import { default as _rollupMoment } from 'moment-timezone';
 const moment = _rollupMoment || _moment;
 
 @Pipe({
-  name: 'dateFormate'
+  name: 'dateFormate',
 })
 export class DateFormatePipe implements PipeTransform {
-
-  transform(date: string | Date, timeFormat: string = ''):string | null {
+  transform(date: string | Date, timeFormat: string = ''): string | null {
     const defaultValues = {
       dateFormat: 'dd-MM-yyyy hh:mm a',
       language: 'en-US',
@@ -30,7 +29,7 @@ export class DateFormatePipe implements PipeTransform {
       : userPrefs.dateFormat;
 
     let resultDate = datePipe.transform(
-      date+'Z',
+      date + 'Z',
       dateFormat,
       timeZoneOffset,
       userPrefs.language
