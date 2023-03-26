@@ -14,7 +14,7 @@ export class DateFormatePipe implements PipeTransform {
     const defaultValues = {
       dateFormat: 'dd-MM-yyyy hh:mm a',
       language: 'en-US',
-      canonicalName: 'US/Central',
+      canonicalName: 'Asia/Dubai',
     };
     const userPrefs = defaultValues;
 
@@ -29,7 +29,7 @@ export class DateFormatePipe implements PipeTransform {
       : userPrefs.dateFormat;
 
     let resultDate = datePipe.transform(
-      date + 'Z',
+      date,
       dateFormat,
       timeZoneOffset,
       userPrefs.language
